@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ICC Cricket World Cup</title>
+    <link href="css/index.css" rel="stylesheet" type="text/css" >
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" >
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <table class="countdownContainer" id="mytable">
+			<tr class="info">
+				<td colspan="5">Countdown to ICC World Cup 2019:</td>
+			</tr>
+			<tr class="info">
+				<td id="months"></td>
+				<td id="days"></td>
+				<td id="hours"></td>
+				<td id="minutes"></td>
+				<td id="seconds"></td>
+			</tr>
+			<tr>
+				<td>Months</td>
+				<td>Days</td>
+				<td>Hours</td>
+				<!-- <td>Minutes</td>
+				<td>Seconds</td> -->
+			</tr>
+		</table>
+    <script type="text/javascript">
+
+			function countdown(){
+				let now = new Date();
+				let eventDate = new Date("May 30, 2019 15:00:00");
+
+				let currentTiime = now.getTime();
+				let eventTime = eventDate.getTime();
+
+				let remTime = eventTime - currentTiime;
+
+				let s = Math.floor(remTime / 1000);
+				let m = Math.floor(s / 60);
+				let h = Math.floor(m / 60);
+				let d = Math.floor(h / 24);
+				let mo = Math.floor(d / 30);
+
+				mo %= 30;
+				h %= 24;
+				m %= 60;
+				s %= 60;
+				d %= 30;
+
+				mo = (mo < 10) ? "0"+ mo : mo;
+				h = (h < 10) ? "0" + h : h;
+				m = (m < 10) ? "0" + m : m;
+				s = (s < 10) ? "0" + s : s;
+
+				if(d>2){
+					document.getElementById("months").textContent = mo;
+					document.getElementById("days").textContent = d;
+					document.getElementById("hours").textContent = h;
+				}
+				else{
+					document.getElementById("hours").textContent = h;
+					document.getElementById("minutes").textContent = m;
+					document.getElementById("seconds").textContent = s;
+				}
+
+				setTimeout(countdown, 1000);
+			}
+
+			countdown();
+		</script>
+  </body>
+</html>

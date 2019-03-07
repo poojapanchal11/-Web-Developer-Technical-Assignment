@@ -1,0 +1,27 @@
+body {
+			background-image: url("https://static.toiimg.com/thumb/msid-63928788,width-1070,height-580,imgsize-1241491,resizemode-6,overlay-toi_sw,pt-32,y_pad-40/photo.jpg");
+			background-size: 100%;
+
+		}
+
+		.countdownContainer{
+			position: absolute;;
+			top: 50%;
+			left: 50%;
+			transform : translateX(-50%) translateY(-50%);
+			text-align: center;
+			background: rgba(3157, 1164, 0110, 0.8);
+			border: 1px dotted #999;
+			padding: 10px;
+			box-shadow: 0 0 5px 3px #ccc;
+		}
+
+		.info {
+			font-size: 40px;
+      font-style: italic;
+		}
+		.info1 {
+			font-size: 30px;
+      color: red;
+
+		}
